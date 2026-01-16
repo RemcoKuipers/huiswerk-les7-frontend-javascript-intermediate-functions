@@ -28,13 +28,35 @@ console.log(domainNameOne, domainNameTwo, domainNameThree);
 
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
+// Input: De input is een emailadres.
+// Output: De output is welk soort domein is het? medewerker, student of extern
+// Werkwijze:
 // ---- Verwachte uitkomsten:
 // typeOfEmail("n.eeken@novi-education.nl") geeft "Student"
 // typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+// Stap 1 : Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht.
+function typeOfEmail(emailaddress) {
+// Stap 2 : Schrijf een if else statement om de domeinnamen te vergelijken en een waarde terug te geven wanneer de statement waar is.
+    if (getEmailDomain(emailaddress) === 'novi-education.nl') {
+        return 'Student';
+    } else if (getEmailDomain(emailaddress) === 'novi.nl') {
+        return 'Medewerker';
+    } else {
+        return 'Extern';
+    }
 
+}
+
+// Stap 3 : Log alle emailadressen en controleer de uitkomsten.
+const domainTypeOne = typeOfEmail('n.eeken@novi-education.nl');
+const domainTypeTwo = typeOfEmail("t.mellink@novi.nl");
+const domainTypeTree = typeOfEmail("novi.nlaapjesk@outlook.com");
+const domainTypeFour = typeOfEmail("a.wiersma@outlook.com");
+
+console.log(domainTypeOne, domainTypeTwo, domainTypeTree, domainTypeFour);
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
 // Een emailadres is valide wanneer:
