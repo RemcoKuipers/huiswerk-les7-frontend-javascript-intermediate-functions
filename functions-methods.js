@@ -8,9 +8,23 @@
 // getEmailDomain("n.eeken@novi-education.nl") geeft novi-education.nl
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
+// Input: de input is een emailadres
+// Output: de output is een domeinnaam dus alles na de @
+// Werkwijze:
+function getEmailDomain(emailaddress) {
+// Stap 1: Bepaal waar in het emailadres de @ zich bevind, dus een indexOf methode
+    const indexOfAt = emailaddress.indexOf('@');
+// Stap 2: Return alle karakters die zich na de @ bevind, dus een substring methode
+    const domainName = emailaddress.substring(indexOfAt + 1);
+    return domainName;
+}
 
+// Stap 3: Maak een log van alle emailadressen en controleer of de uitkomsten kloppen.
+const domainNameOne = getEmailDomain("n.eeken@novi-education.nl");
+const domainNameTwo = getEmailDomain("t.mellink@novi.nl");
+const domainNameThree = getEmailDomain("a.wiersma@outlook.com");
 
-
+console.log(domainNameOne, domainNameTwo, domainNameThree);
 
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
@@ -19,7 +33,6 @@
 // typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
-
 
 
 /* Opdracht  3 */
