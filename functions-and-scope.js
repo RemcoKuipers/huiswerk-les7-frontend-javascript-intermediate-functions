@@ -85,6 +85,7 @@ function averageGrade(grades) {
     }
     return (total / grades.length).toFixed(2);
 }
+
 // Stap 3 : Maak niet aanpasbare variabelen om te kijken wat het gemiddelde cijfer is om te kunnen loggen.
 const averageGradesOne = averageGrade(grades);
 const averageGradesTwo = averageGrade([6, 4, 5]);
@@ -106,11 +107,17 @@ console.log(averageGradesOne, averageGradesTwo, averageGradesThree);
 
 /* 3a: Script schrijven  */
 // Schrijf een script die op basis van de grades array (hierboven) checkt wat het hoogst behaalde cijfer is. Je mag hier geen bestaande methoden voor gebruiken. Schrijf de stapjes eerst uit en vraag jezelf de volgende dingen af:
-// * Hoe kan ik iedere waarde van de array langsgaan?
-// * Op welke conditie moet ik checken?
-// * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
+// * Hoe kan ik iedere waarde van de array langsgaan? Door een for loop te schrijven
+// * Op welke conditie moet ik checken? Elke cijfer vergelijken met elkaar en kijken welke het hoogste is
+// * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan? Door een aanpasbare variabele te maken waarin ik de hoogste cijfer bewaar.
 // Log het antwoord in de terminal.
-
+let highestGrades = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] > highestGrades) {
+        highestGrades = grades[i];
+    }
+}
+console.log(highestGrades);
 // ---- Verwachte uitkomst: 9
 
 
@@ -118,8 +125,21 @@ console.log(averageGradesOne, averageGradesTwo, averageGradesThree);
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+function highestGrade(grades) {
+    let highestGrades = 0;
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] > highestGrades) {
+            highestGrades = grades[i];
+        }
+    }
+    return highestGrades;
+}
 
+const highestGradeOne = highestGrade(grades);
+const highestGradeTwo = highestGrade([6, 4, 5]);
+const highestGradeThree = highestGrade([8, 9, 4, 6, 10]);
 // ---- Verwachte uitkomsten:
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+console.log(highestGradeOne, highestGradeTwo, highestGradeThree);
