@@ -83,7 +83,7 @@ function averageGrade(grades) {
     for (let i = 0; i < grades.length; i++) {
         total = total + grades[i]
     }
-    return total / grades.length;
+    return (total / grades.length).toFixed(2);
 }
 // Stap 3 : Maak niet aanpasbare variabelen om te kijken wat het gemiddelde cijfer is om te kunnen loggen.
 const averageGradesOne = averageGrade(grades);
@@ -99,7 +99,7 @@ console.log(averageGradesOne, averageGradesTwo, averageGradesThree);
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
-// Tip: Google is your best friend!
+// Tip: Google is your best friend! Google zegt dat het de toFixed(2); property is dus dat ga ik gebruiken.
 
 
 /* Bonusopdracht: hoogste cijfer */
